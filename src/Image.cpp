@@ -1,12 +1,10 @@
-﻿#include "Image.h"
+﻿#define STB_IMAGE_IMPLEMENTATION
+#define STB_IMAGE_WRITE_IMPLEMENTATION
 
-#include <string.h>
-
+#include "Image.h"
+// #include <string.h>
 #include "stb_image.h"
 #include "stb_image_write.h"
-
-#define STB_IMAGE_IMPLEMENTATION
-#define STB_IMAGE_WRITE_IMPLEMENTATION
 
 Image::Image(const char* filename)
 {
@@ -41,13 +39,29 @@ Image::~Image()
 bool Image::read(const char* filename)
 {
     data = stbi_load(filename, &width, &height,  &channels, 0);
-    
     return data != NULL;
 }
 
 bool Image::write(const char* filename)
 {
-    return false;
+    image_type type = get_file_type(filename);
+    int success = 0;
+    switch (type)
+    {
+        case png:
+            success = stbi_write_png(filename, width, height, channels, data, width * channels);
+            break;
+        case jpg:
+            success = stbi_write_jpg(filename, width, height, channels, data, 100);
+            break;
+        case bmp:
+            success = stbi_write_bmp(filename, width, height, channels, data);
+            break;
+        case tga:
+            success = stbi_write_tga(filename, width, height, channels, data);
+            break;
+    }
+    return success != 0;
 }
 
 image_type Image::get_file_type(const char* filename)
