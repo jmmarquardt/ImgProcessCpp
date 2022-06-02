@@ -81,5 +81,41 @@ image_type Image::get_file_type(const char* filename)
     return png;
 }
 
+Image& Image::grayscale_avg()
+{
+    // average the rgb values
+    if (channels > 3)
+        printf("Image %p is monochromatic, dichromatic, or blank. It cannot be converted to grayscale.", this);
+    else
+    {
+        for (int i = 0; i < size; i += channels)
+        {
+            int gray = (data[i] + data[i + 1] + data[i + 2]) / 3;
+            memset(data + i, gray, 3);
+        }
+    }
+    return *this;
+}
 
+Image& Image::grayscale_lum()
+{
+    // weighted average of rgb values to preserve luminance value
+    if (channels < 3)
+    {
+        printf("Image %p is monochromatic, dichromatic, or blank. It cannot be converted to grayscale.", this);
+    }
+    else
+    {
+        // CIE 1931 luminance coefficients
+        const float rLum = 0.2126f;
+        const float gLum = 0.7152f;
+        const float bLum = 0.0722f;
 
+        for (int i = 0; i < size; i += channels)
+        {
+            int gray = rLum * data[i] + gLum * data[i + 1] + bLum * data[i + 2];
+            memset(data + i, gray, 3);
+        }
+        return *this;
+    }
+}
