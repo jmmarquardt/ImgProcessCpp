@@ -30,3 +30,6 @@
 *.exe
 *.out
 *.app
+
+# test Output files
+*./images/testOutput/*.*
