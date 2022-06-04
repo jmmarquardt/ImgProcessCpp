@@ -119,3 +119,42 @@ Image& Image::grayscale_lum()
         return *this;
     }
 }
+
+Image& Image::colorMask(float r, float g, float b)
+{
+    if (channels < 3)
+    {
+        printf("\e[31m[ERROR] Color mask requires at least 3 channels, but this image has %d channels\e[0m\n", channels);
+    }
+    else
+    {
+        for (int i = 0; i < size; i += channels)
+        {
+            data[i] *= r;
+            data[i + 1] *= g;
+            data[i + 2] *= b;
+        }
+    }
+    return *this;
+}
+
+Image& Image::encodeMessage(const char* message)
+{
+    uint32_t len = strlen(message) * sizeof(char);
+    for (uint8_t i = 0; i < STEG_HEADER_SIZE; ++i)
+    {
+        data[i] &= 0xFE;
+        data[i] |= (len >> (STEG_HEADER_SIZE - 1 - i)) & 1UL;
+    }
+
+    return *this;
+}
+
+Image& Image::decodeMessage(char* buffer, size_t* messageLength)
+{
+    uint32_t len = 0;
+    for (uint8_t i = 0; i < STEG_HEADER_SIZE; ++i)
+    {
+        len = (len<<1) | (data[i] & 1);
+    }
+}

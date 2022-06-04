@@ -1,2 +1,23 @@
-﻿  main.cpp
-  ImgProcessCpp.vcxproj -> D:\Workspace\Cpp\ImgProcessCpp\x64\Debug\ImgProcessCpp.exe
+﻿  Image.cpp
+D:\Workspace\Cpp\ImgProcessCpp\ImgProcessCpp\src\Image.cpp(116,22): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+D:\Workspace\Cpp\ImgProcessCpp\ImgProcessCpp\src\Image.cpp(127,16): warning C4129: 'e': unrecognized character escape sequence
+D:\Workspace\Cpp\ImgProcessCpp\ImgProcessCpp\src\Image.cpp(133,25): warning C4244: '*=': conversion from 'float' to 'uint8_t', possible loss of data
+D:\Workspace\Cpp\ImgProcessCpp\ImgProcessCpp\src\Image.cpp(134,29): warning C4244: '*=': conversion from 'float' to 'uint8_t', possible loss of data
+D:\Workspace\Cpp\ImgProcessCpp\ImgProcessCpp\src\Image.cpp(135,29): warning C4244: '*=': conversion from 'float' to 'uint8_t', possible loss of data
+D:\Workspace\Cpp\ImgProcessCpp\ImgProcessCpp\src\Image.cpp(143,50): warning C4267: 'initializing': conversion from 'size_t' to 'uint32_t', possible loss of data
+D:\Workspace\Cpp\ImgProcessCpp\ImgProcessCpp\src\Image.cpp(144,47): error C2143: syntax error: missing ')' before '++'
+D:\Workspace\Cpp\ImgProcessCpp\ImgProcessCpp\src\Image.cpp(144,47): error C2059: syntax error: ';'
+D:\Workspace\Cpp\ImgProcessCpp\ImgProcessCpp\src\Image.cpp(144,50): error C2059: syntax error: ')'
+D:\Workspace\Cpp\ImgProcessCpp\ImgProcessCpp\src\Image.cpp(146,24): error C2059: syntax error: ';'
+D:\Workspace\Cpp\ImgProcessCpp\ImgProcessCpp\src\Image.cpp(147,14): error C2065: 'i': undeclared identifier
+D:\Workspace\Cpp\ImgProcessCpp\ImgProcessCpp\src\Image.cpp(147,29): error C2143: syntax error: missing ')' before ';'
+D:\Workspace\Cpp\ImgProcessCpp\ImgProcessCpp\src\Image.cpp(147,29): warning C4293: '>>': shift count negative or too big, undefined behavior
+D:\Workspace\Cpp\ImgProcessCpp\ImgProcessCpp\src\Image.cpp(147,29): error C2059: syntax error: ';'
+D:\Workspace\Cpp\ImgProcessCpp\ImgProcessCpp\src\Image.cpp(147,52): error C2065: 'i': undeclared identifier
+D:\Workspace\Cpp\ImgProcessCpp\ImgProcessCpp\src\Image.cpp(147,53): error C2059: syntax error: ')'
+D:\Workspace\Cpp\ImgProcessCpp\ImgProcessCpp\src\Image.cpp(147,54): error C2059: syntax error: ')'
+D:\Workspace\Cpp\ImgProcessCpp\ImgProcessCpp\src\Image.cpp(150,5): error C2059: syntax error: 'return'
+D:\Workspace\Cpp\ImgProcessCpp\ImgProcessCpp\src\Image.cpp(151,1): error C2059: syntax error: '}'
+D:\Workspace\Cpp\ImgProcessCpp\ImgProcessCpp\src\Image.cpp(151,1): error C2143: syntax error: missing ';' before '}'
+D:\Workspace\Cpp\ImgProcessCpp\ImgProcessCpp\src\Image.cpp(154,1): error C2143: syntax error: missing ';' before '{'
+D:\Workspace\Cpp\ImgProcessCpp\ImgProcessCpp\src\Image.cpp(154,1): error C2447: '{': missing function header (old-style formal list?)
